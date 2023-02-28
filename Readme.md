@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов (простой)»
 
 * Студент: [Elena Voytovich](https://up.htmlacademy.ru/react/12/user/989469).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Железцов](https://up.htmlacademy.ru/react/12/user/983299).
 
 ---
 
