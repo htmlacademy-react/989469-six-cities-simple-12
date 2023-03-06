@@ -1,5 +1,9 @@
+import Main from '../../pages/main/main';
+
 function App(): JSX.Element {
-  return <p>Hello, world!</p>;
+  return (
+    <Main placesNumber={312}/>
+  );
 }
 
 export default App;
