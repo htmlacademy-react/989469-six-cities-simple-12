@@ -2,7 +2,7 @@ import Main from '../../pages/main/Main';
 
 function App(): JSX.Element {
   return (
-    <Main/>
+    <Main placesNumber={312}/>
   );
 }
 
