@@ -1,11 +1,12 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
-
-import {AppRoutes, Props} from '../../const';
-
 import Main from '../../pages/main/main';
 import Login from '../../pages/login/login';
 import Property from '../../pages/property/property';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
+
+import {AppRoutes} from '../../const';
+import {offers} from '../../mocks/offers';
+
 
 function App(): JSX.Element {
   return (
@@ -13,21 +14,20 @@ function App(): JSX.Element {
       <Routes>
         <Route
           path={AppRoutes.root}
-          element={<Main offersNumber={Props.offersNumber}/>}
+          element={<Main offerList={offers}/>}
         />
         <Route
           path={AppRoutes.login}
           element={<Login/>}
         />
         <Route
-          path={AppRoutes.room}
+          path={AppRoutes.offer}
           element={<Property/>}
         />
         <Route
           path='*'
           element={<NotFoundScreen/>}
         />
-
       </Routes>
     </BrowserRouter>
   );
