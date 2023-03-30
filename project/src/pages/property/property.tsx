@@ -28,7 +28,7 @@ function Property(): JSX.Element {
         <section className='property'>
           <div className='property__gallery-container container'>
             <div className='property__gallery'>
-              {offerImages.map((item) => <PropertyImg id={item.id} img={item.img}/>)}
+              {offerImages.map((item) => <PropertyImg key={item.id} images={item}/>)}
             </div>
           </div>
           <div className='property__container container'>

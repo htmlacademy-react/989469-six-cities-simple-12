@@ -11,18 +11,18 @@ function ReviewForm() {
   const [formData, setFormData] = useState<FormData>({
     review: '',
     rating: 0
-  })
+  });
 
   const handleFormChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (evt) => {
     const {name, value} = evt.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
       [name]: value
-    }))
+    }));
 
     // ??? state doesn't match
     // console.log(formData)
-  }
+  };
 
   return (
     <form className='reviews__form form' action='project/src/components#' method='post'>
@@ -39,7 +39,7 @@ function ReviewForm() {
         <button className='reviews__submit form__submit button' type='submit' disabled>Submit</button>
       </div>
     </form>
-  )
+  );
 }
 
 export default ReviewForm;

@@ -7,8 +7,8 @@ export type OfferListProps = {
 }
 
 export type OfferImages = {
-  id: number,
-  img: string
+  id: number;
+  img: string;
 }
 
 export const offerImages: OfferImages[] = [
@@ -36,7 +36,7 @@ export const offerImages: OfferImages[] = [
     'id': 6,
     'img': 'img/apartment-01.jpg',
   }
-]
+];
 
 export type Offer = {
   id: number;

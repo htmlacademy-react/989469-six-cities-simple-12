@@ -8,7 +8,7 @@ function OfferList({offerList}: OfferListProps) {
     <>
       {offerList.map((item) => <OfferCard offer={item} key={item.id}/>)}
     </>
-  )
+  );
 }
 
-export default OfferList
+export default OfferList;

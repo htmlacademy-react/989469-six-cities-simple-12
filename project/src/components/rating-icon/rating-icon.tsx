@@ -18,7 +18,7 @@ function RatingIcon({rating, onChange}: Props) {
         </svg>
       </label>
     </>
-  )
+  );
 }
 
 export default RatingIcon;
