@@ -25,7 +25,7 @@ function App(): JSX.Element {
           element={<Property/>}
         />
         <Route
-          path='*'
+          path={AppRoutes.notFound}
           element={<NotFoundScreen/>}
         />
       </Routes>

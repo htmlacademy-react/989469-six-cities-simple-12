@@ -6,6 +6,11 @@ export type OfferListProps = {
   offerList: Offer[];
 }
 
+export type MapPinsProps = {
+  city: City;
+  offers: Offer[];
+}
+
 export type OfferImages = {
   id: number;
   img: string;
@@ -46,6 +51,14 @@ export type Offer = {
   rating: number;
   title: string;
   type: string;
+  city: {
+    location: {
+      latitude: number;
+      longitude: number;
+      zoom: number;
+    };
+    name: string;
+  };
 }
 
 export const offers: Offer[] = [
@@ -56,7 +69,15 @@ export const offers: Offer[] = [
     'price': 120,
     'rating': 4.5,
     'title': 'Beautiful & luxurious studio at great location',
-    'type': 'Apartment'
+    'type': 'Apartment',
+    'city': {
+      'location': {
+        'latitude': 52.3909553943508,
+        'longitude': 4.85309666406198,
+        'zoom': 10
+      },
+      'name': 'Amsterdam'
+    },
   },
   {
     'id': 2,
@@ -65,7 +86,15 @@ export const offers: Offer[] = [
     'price': 80,
     'rating': 1.9,
     'title': 'Wood and stone place',
-    'type': 'Private room'
+    'type': 'Private room',
+    'city': {
+      'location': {
+        'latitude': 52.3609553943508,
+        'longitude': 4.85309666406198,
+        'zoom': 10
+      },
+      'name': 'Amsterdam'
+    },
   },
   {
     'id': 3,
@@ -74,7 +103,15 @@ export const offers: Offer[] = [
     'price': 132,
     'rating': 3.2,
     'title': 'Canal View Prinsengracht',
-    'type': 'Apartment'
+    'type': 'Apartment',
+    'city': {
+      'location': {
+        'latitude': 52.3909553943508,
+        'longitude': 4.929309666406198,
+        'zoom': 10
+      },
+      'name': 'Amsterdam'
+    },
   },
   {
     'id': 4,
@@ -83,6 +120,26 @@ export const offers: Offer[] = [
     'price': 180,
     'rating': 4.6,
     'title': 'Nice, cozy, warm big bed apartment',
-    'type': 'Apartment'
+    'type': 'Apartment',
+    'city': {
+      'location': {
+        'latitude': 52.3809553943508,
+        'longitude': 4.939309666406198,
+        'zoom': 10
+      },
+      'name': 'Amsterdam'
+    },
   },
 ];
+
+export type City = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+}
+
+export const city: City = {
+  'latitude': 52.370216,
+  'longitude': 4.895168,
+  'zoom': 10
+};

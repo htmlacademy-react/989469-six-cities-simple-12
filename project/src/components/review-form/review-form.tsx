@@ -1,6 +1,7 @@
-import {reviewRatings} from '../../mocks/reviews';
-import RatingIcon from '../rating-icon/rating-icon';
 import React, {useState} from 'react';
+import RatingIcon from '../rating-icon/rating-icon';
+
+import {reviewRatings} from '../../mocks/reviews';
 
 type FormData = {
   review: string;

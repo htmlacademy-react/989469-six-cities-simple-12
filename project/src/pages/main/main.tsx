@@ -1,7 +1,8 @@
 import Header from '../../components/header/header';
 import OfferList from '../../components/offer-list/offer-list';
+import Map from '../../components/map';
 
-import {OfferListProps, offers} from '../../mocks/offers';
+import {OfferListProps, offers, city} from '../../mocks/offers';
 
 
 function Main({offerList}: OfferListProps): JSX.Element {
@@ -90,7 +91,7 @@ function Main({offerList}: OfferListProps): JSX.Element {
             </div>
           </section>
           <div className='cities__right-section'>
-            <section className='cities__map map'></section>
+            <Map city={city} offers={offers}/>
           </div>
         </div>
       </div>
