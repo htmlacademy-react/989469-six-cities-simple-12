@@ -1,5 +1,6 @@
-import {reviewRating} from '../../mocks/reviews';
 import React from 'react';
+
+import {reviewRating} from '../../mocks/reviews';
 
 type Props = {
   rating: reviewRating;
