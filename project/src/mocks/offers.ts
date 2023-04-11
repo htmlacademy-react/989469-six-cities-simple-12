@@ -1,14 +1,21 @@
+import {ReviewProps} from '../types/types';
+
 export type OfferProps = {
   offer: Offer;
+  onOfferItemHover: (offerItemId: number | null) => void;
 }
 
 export type OfferListProps = {
   offerList: Offer[];
+  onOfferItemHover: (offerItemId: number | null) => void;
+  className: string;
 }
 
 export type MapPinsProps = {
   city: City;
   offers: Offer[];
+  selectedOffer: Offer | undefined;
+  className: string;
 }
 
 export type OfferImages = {
@@ -143,3 +150,15 @@ export const city: City = {
   'longitude': 4.895168,
   'zoom': 10
 };
+
+export const reviewList: ReviewProps[] = [
+  {
+    id: 1,
+    image: 'img/avatar-max.jpg',
+    userName: 'Max',
+    rating: '80%',
+    text: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
+    dateTime: '2019-04-24',
+    date: 'April 2019',
+  },
+];
