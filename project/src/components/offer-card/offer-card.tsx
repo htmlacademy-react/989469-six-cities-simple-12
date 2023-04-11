@@ -1,23 +1,25 @@
-import {useState} from 'react';
+import {MouseEvent} from 'react';
+import {Link} from 'react-router-dom';
+
 import PremiumCard from '../premium-card/premium-card';
 
-import {OfferProps} from '../../mocks/offers';
-import {Link} from 'react-router-dom';
 import {AppRoutes} from '../../const';
+import {OfferProps} from '../../mocks/offers';
 
 
-function OfferCard({offer}: OfferProps): JSX.Element {
+function OfferCard({offer, onOfferItemHover}: OfferProps): JSX.Element {
   const {id, isPremium, previewImage, price, rating, title, type} = offer;
   const ratingWidth = `${rating * 100 / 5}%`;
 
-  const [, setActiveCard] = useState<number | null>();
 
-  const handleMouseEnter = () => {
-    setActiveCard(id);
+  const handleMouseEnter = (event: MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    onOfferItemHover(id);
   };
 
-  const handleMouseLeave = () => {
-    setActiveCard(null);
+  const handleMouseLeave = (event: MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    onOfferItemHover(null);
   };
 
   return (

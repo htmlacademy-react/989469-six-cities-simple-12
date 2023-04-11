@@ -1,11 +1,21 @@
+import {useState} from 'react';
+
 import Header from '../../components/header/header';
 import OfferList from '../../components/offer-list/offer-list';
-import Map from '../../components/map';
+import Map from '../../components/map/map';
 
-import {OfferListProps, offers, city} from '../../mocks/offers';
+import {Offer, offers, city} from '../../mocks/offers';
 
 
-function Main({offerList}: OfferListProps): JSX.Element {
+function Main(): JSX.Element {
+  const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
+
+  const onOfferItemHover = (offerItemId: number | null) => {
+    const currentOffer = offers.find((item) => item.id === offerItemId);
+
+    setSelectedOffer(currentOffer);
+  };
+
   return (
     <>
       <div style={{display: 'none'}}>
@@ -70,7 +80,7 @@ function Main({offerList}: OfferListProps): JSX.Element {
         <div className='cities__places-container container'>
           <section className='cities__places places'>
             <h2 className='visually-hidden'>Places</h2>
-            <b className='places__found'>{offerList.length} places to stay in Amsterdam</b>
+            <b className='places__found'>{offers.length} places to stay in Amsterdam</b>
             <form className='places__sorting' action='#' method='get'>
               <span className='places__sorting-caption'>Sort by</span>
               <span className='places__sorting-type' tabIndex={0}>
@@ -87,11 +97,11 @@ function Main({offerList}: OfferListProps): JSX.Element {
               </ul>
             </form>
             <div className='cities__places-list places__list tabs__content'>
-              <OfferList offerList={offers}/>
+              <OfferList offerList={offers} onOfferItemHover={onOfferItemHover} className='cities__places-list places__list tabs__content'/>
             </div>
           </section>
           <div className='cities__right-section'>
-            <Map city={city} offers={offers}/>
+            <Map city={city} offers={offers} selectedOffer={selectedOffer} className='cities__map map'/>
           </div>
         </div>
       </div>
